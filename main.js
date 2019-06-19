@@ -4,7 +4,7 @@ const DataStore = require('./MuiscDataStore')
 const myStore = new DataStore({'name':'music data'})
 const Store = require("electron-store");
 const store = new Store()
-console.log(app.getPath('userData'))
+//console.log(app.getPath('userData'))
 // store.set('unicorn','333')
 // console.log(store.get('unicorn'))
 
@@ -50,7 +50,6 @@ console.log(app.getPath('userData'))
     ipcMain.on('add-tracks',(event,tracks)=>{
       const updateTracks=myStore.addTracks(tracks).getTracks();
       mainWindow.send("getTracks",updateTracks)
-      console.log(tracks)
     })
     ipcMain.on('open-music-file',(event,arg)=>{
         dialog.showOpenDialog({

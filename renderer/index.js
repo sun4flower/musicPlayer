@@ -12,7 +12,6 @@ const renderListHtml=(tracks)=>{
     const tracksList=$('trackList');
     var htmls="";
     const trackListHtml=tracks.reduce((html,track,currentIndex)=>{
-            console.log(html,track,currentIndex)
         htmls+=`<li class='row music-track list-group-item d-flex justify-content-between align-items-center'>
             <div class="col-10">
                 <b>${track.fileName}</b>
@@ -42,7 +41,6 @@ const renderPlayHtml=(name,duration)=>{
 }
 const updateProgress=(current,duration)=>{
     const seeker=$("current-seeker")
-    console.log(seeker)
     seeker.innerHTML=convertDuration(current)
     const progress=$("progress")
     progress.innerHTML=Math.floor(current/duration*100) +"%"
@@ -60,7 +58,6 @@ musicAudio.addEventListener("loadedmetadata",()=>{
 
 })
 musicAudio.addEventListener('timeupdate',()=>{
-    console.log(999)
     updateProgress(musicAudio.currentTime,musicAudio.duration)
 })
 $("trackList").addEventListener('click',events=>{
