@@ -6,14 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>本地播放器</title>
     <link rel='stylesheet' href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="icon" href="//at.alicdn.com/t/font_918300_q5yxfof3wjo.css">
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
     <div class="container mt-4">
         <h1>我的播放器</h1>
+        <div id="trackList" class="mb-2"></div>
         <button type="button" class="btn btn-primary btn-lg btn-block" class="mt-4" id="addMusic">添加歌曲到曲库</button>
+
+        
+    </div>
+    <div class="container fixed-bottom bg-white pb-4">
+        <div class="row my-2" id="play-status"></div>
+        <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width:0%" id="progress">0%</div>
+        </div>
     </div>
     <script>
         require("./index")
     </script>
 </body>
-</html>
+</html> 
