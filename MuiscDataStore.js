@@ -21,15 +21,14 @@ class DataStore extends Store{
                 fileName:path.basename(track)
             }
         }).filter(track=>{
-            const currentTracksPath=this.getTracks().map(track=>track.path)
-            console.log(currentTracksPath)
+            const currentTracksPath=this.getTracks().map(track=>track.path);
             return currentTracksPath.indexOf(track.path)<0
         })
         this.tracks = [ ... this.tracks, ...tracksWithProps]
         return this.saveTracks()
     }
     deleteTrack(deleteId){
-        this.tracks=this.tracks.filter(item=>item.id!=deleteId)
+        this.tracks=this.tracks.filter(item=>item.id!=deleteId);
         return this.saveTracks()
     }
 }

@@ -19,7 +19,6 @@ const renderListHtml=(tracks)=>{
             <div class="col-2">
                 <span class="fa-play" class="pointer"  id="fa-play" data-id="${track.id}"></span>
                 <span class="fa-trash" mr-40 class="pointer" data-id="${track.id}" id="delete">删除</span>
-               
             </div>
         </li>`
         
@@ -43,8 +42,8 @@ const updateProgress=(current,duration)=>{
     const seeker=$("current-seeker")
     seeker.innerHTML=convertDuration(current)
     const progress=$("progress")
-    progress.innerHTML=Math.floor(current/duration*100) +"%"
-    progress.style.width=Math.floor(current/duration*100) +"%"
+    progress.innerHTML=Math.floor(current/duration*100) +"%";
+    progress.style.width=Math.floor(current/duration*100) +"%";
 
 }
 ipcRenderer.on('getTracks',(event,tracks)=>{
@@ -69,10 +68,10 @@ $("trackList").addEventListener('click',events=>{
             musicAudio.play()
         }else{
             const progress=$("progress")
-            progress.innerHTML="0%"
-            progress.style.width="0%"
+            progress.innerHTML="0%";
+            progress.style.width="0%";
             currentTrack=allTracks.find(track=>{
-                return track.id===id
+                return track.id===id;
              })
              musicAudio.src=currentTrack.path;
              musicAudio.play()
@@ -81,7 +80,7 @@ $("trackList").addEventListener('click',events=>{
                 resetIcon.classList.replace('fa-stop','fa-play')
              }
         }
-        classList.replace('fa-play','fa-stop')
+        classList.replace('fa-play','fa-stop');
     }else if(id && classList.contains('fa-stop')){
          musicAudio.pause()
          classList.replace('fa-stop','fa-play')
